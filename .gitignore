@@ -1,0 +1,9 @@
+/raw
+node_modules
+/ml-brightness//ml/model/best_model.pkl
+ml-brightness\ml\model\best_model.pkl"ml-brightness/ml/model/*.csv" 
+"ml-brightness/ml/model/*.pkl" 
+ml-brightness/ml/model/*.csv 
+ml-brightness/ml/model/*.pkl 
+*.pkl 
+*.csv 
