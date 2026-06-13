@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=JetBrains+Mono:wght@500;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background: #020617;
+  color: #e2e8f0;
+  font-family: 'Inter', system-ui, sans-serif;
+  min-height: 100vh;
+  padding: 0 5px;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* ── Glassmorphism cards ── */
+.glass {
+  background: linear-gradient(135deg, rgba(255,255,255,0.06) 0%, rgba(255,255,255,0.02) 100%);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255,255,255,0.09);
+  border-radius: 18px;
+  padding: 22px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+.glass:hover {
+  border-color: rgba(255,255,255,0.14);
+}
+
+.glass-strong {
+  background: linear-gradient(135deg, rgba(255,255,255,0.09) 0%, rgba(255,255,255,0.04) 100%);
+  backdrop-filter: blur(32px);
+  border: 1px solid rgba(255,255,255,0.13);
+  border-radius: 22px;
+  padding: 26px;
+}
+
+/* ── Glow effects ── */
+.glow-green  { box-shadow: 0 4px 40px rgba(6,214,160,0.12),  inset 0 1px 0 rgba(6,214,160,0.08); }
+.glow-blue   { box-shadow: 0 4px 40px rgba(76,201,240,0.12), inset 0 1px 0 rgba(76,201,240,0.08); }
+.glow-purple { box-shadow: 0 4px 40px rgba(168,85,247,0.12), inset 0 1px 0 rgba(168,85,247,0.08); }
+.glow-yellow { box-shadow: 0 4px 40px rgba(249,199,79,0.12), inset 0 1px 0 rgba(249,199,79,0.08); }
+.glow-red    { box-shadow: 0 4px 40px rgba(230,57,70,0.12),  inset 0 1px 0 rgba(230,57,70,0.08); }
+
+/* ── Gradient text ── */
+.gradient-text-green  { background: linear-gradient(135deg,#06d6a0,#4cc9f0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.gradient-text-purple { background: linear-gradient(135deg,#a855f7,#4cc9f0); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+.gradient-text-gold   { background: linear-gradient(135deg,#f9c74f,#f4845f); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; }
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 4px; height: 4px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: rgba(255,255,255,0.15); }
+
+/* ── Chart tooltip ── */
+.recharts-tooltip-wrapper .recharts-default-tooltip {
+  background: rgba(2,6,23,0.97) !important;
+  border: 1px solid rgba(255,255,255,0.1) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4) !important;
+}
+
+/* ── Animated pulse dot ── */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%       { opacity: 0.5; transform: scale(0.8); }
+}
+.pulse-dot { animation: pulse-dot 1.5s ease-in-out infinite; }
+
+/* ── Shimmer skeleton ── */
+@keyframes shimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position:  200% 0; }
+}
+.shimmer {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03) 25%, rgba(255,255,255,0.07) 50%, rgba(255,255,255,0.03) 75%);
+  background-size: 200% 100%;
+  animation: shimmer 1.8s infinite;
+}
+
+/* ── Range input ── */
+input[type=range] {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 99px;
+  outline: none;
+  cursor: pointer;
+}
+input[type=range]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: #f9c74f;
+  box-shadow: 0 0 8px rgba(249,199,79,0.5);
+  cursor: pointer;
+  transition: transform 0.15s;
+}
+input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.2); }
